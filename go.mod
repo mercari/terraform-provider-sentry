@@ -1,36 +1,34 @@
 module github.com/jianyuan/terraform-provider-sentry
 
 require (
-	github.com/apparentlymart/go-cidr v1.0.0 // indirect
-	github.com/armon/go-radix v1.0.0 // indirect
-	github.com/aws/aws-sdk-go v1.16.31 // indirect
-	github.com/blang/semver v3.5.1+incompatible // indirect
-	github.com/hashicorp/go-getter v1.0.3 // indirect
-	github.com/hashicorp/go-hclog v0.0.0-20181001195459-61d530d6c27f // indirect
-	github.com/hashicorp/go-plugin v0.0.0-20190129155509-362c99b11937 // indirect
-	github.com/hashicorp/go-uuid v1.0.1 // indirect
+	cloud.google.com/go/storage v1.0.0 // indirect
+	github.com/aws/aws-sdk-go v1.25.0 // indirect
+	github.com/go-test/deep v1.0.4 // indirect
+	github.com/google/go-cmp v0.3.1 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
-	github.com/hashicorp/hcl2 v0.0.0-20181001210626-3e4b7e0eb20e // indirect
-	github.com/hashicorp/hil v0.0.0-20170627220502-fa9f258a9250 // indirect
-	github.com/hashicorp/logutils v1.0.0 // indirect
-	github.com/hashicorp/terraform v0.11.11
-	github.com/hashicorp/yamux v0.0.0-20180917205041-7221087c3d28 // indirect
+	github.com/hashicorp/hcl2 v0.0.0-20190909202536-66c59f909e25 // indirect
+	github.com/hashicorp/hil v0.0.0-20190212132231-97b3a9cdfa93 // indirect
+	github.com/hashicorp/terraform-plugin-sdk v1.0.0
+	github.com/hashicorp/yamux v0.0.0-20190923154419-df201c70410d // indirect
 	github.com/jianyuan/go-sentry v1.2.0
-	github.com/mattn/go-colorable v0.1.0 // indirect
-	github.com/mitchellh/cli v1.0.0 // indirect
-	github.com/mitchellh/copystructure v1.0.0 // indirect
-	github.com/mitchellh/go-homedir v1.1.0 // indirect
-	github.com/mitchellh/go-wordwrap v1.0.0 // indirect
-	github.com/mitchellh/hashstructure v1.0.0 // indirect
-	github.com/mitchellh/mapstructure v1.1.1 // indirect
-	github.com/posener/complete v1.1.2 // indirect
-	github.com/zclconf/go-cty v0.0.0-20180925180032-d9b87d891d0b // indirect
-	golang.org/x/crypto v0.0.0-20181029021203-45a5f77698d3 // indirect
-	golang.org/x/net v0.0.0-20190206173232-65e2d4e15006 // indirect
-	golang.org/x/sys v0.0.0-20190209173611-3b5209105503 // indirect
-	google.golang.org/genproto v0.0.0-20181219182458-5a97ab628bfb // indirect
-	google.golang.org/grpc v1.17.0 // indirect
+	github.com/mattn/go-colorable v0.1.2 // indirect
+	github.com/mattn/go-isatty v0.0.9 // indirect
+	github.com/stretchr/testify v1.4.0 // indirect
+	github.com/ulikunitz/xz v0.5.6 // indirect
+	github.com/vmihailenco/msgpack v4.0.4+incompatible // indirect
+	go.opencensus.io v0.22.1 // indirect
+	golang.org/x/crypto v0.0.0-20190927123631-a832865fa7ad // indirect
+	golang.org/x/exp v0.0.0-20190925190815-26a69ce95baf // indirect
+	golang.org/x/net v0.0.0-20190926025831-c00fd9afed17 // indirect
+	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e // indirect
+	golang.org/x/sys v0.0.0-20190927073244-c990c680b611 // indirect
+	golang.org/x/tools v0.0.0-20190927052746-69890759d905 // indirect
+	google.golang.org/api v0.10.0 // indirect
+	google.golang.org/appengine v1.6.4 // indirect
+	google.golang.org/genproto v0.0.0-20190926190326-7ee9db18f195 // indirect
+	google.golang.org/grpc v1.24.0 // indirect
+	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
 )
 
-// Override to use forked version of go-sentry with support for project key rate limits
 replace github.com/jianyuan/go-sentry => github.com/mercari/go-sentry v1.2.1-0.20190408100347-637a81a6ad97
+replace git.apache.org/thrift.git => github.com/apache/thrift v0.0.0-20180902110319-2566ecd5d999 // indirect
