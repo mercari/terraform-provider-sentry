@@ -95,9 +95,10 @@ The following attributes are exported:
 # Create a project
 resource "sentry_project" "default" {
     organization = "my-organization"
-    team = "my-team"
-    name = "Web App"
-    slug = "web-app"
+    team     = "my-team"
+    name     = "Web App"
+    slug     = "web-app"
+    platform = "javascript"
 }
 ```
 
@@ -109,6 +110,7 @@ The following arguments are supported:
 * `team` - (Required) The slug of the team the project should be created for.
 * `name` - (Required) The human readable name for the project.
 * `slug` - (Optional) The unique URL slug for this project. If this is not provided a slug is automatically generated based on the name.
+* `platform` - (Optional) The integration platform.
 
 ##### Attributes Reference
 
@@ -243,3 +245,18 @@ To import a project:
 ```bash
 $ terraform import sentry_project.default org-slug/project-slug
 ```
+
+## Development
+
+### Test
+
+Test the provider by running `make test`.
+
+Make sure to set the following environment variables:
+
+- `SENTRY_TEST_ORGANIZATION`
+- `SENTRY_TOKEN`
+
+### Build
+
+See the [Writing Custom Providers page of the Terraform documentation](https://www.terraform.io/docs/extend/writing-custom-providers.html#building-the-plugin) for instructions.

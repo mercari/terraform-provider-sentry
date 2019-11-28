@@ -5,7 +5,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/hashicorp/terraform/helper/schema"
+	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/jianyuan/go-sentry/sentry"
 )
 
@@ -39,6 +39,12 @@ func resourceSentryProject() *schema.Resource {
 				Type:        schema.TypeString,
 				Optional:    true,
 				Description: "The optional slug for this project",
+				Computed:    true,
+			},
+			"platform": {
+				Type:        schema.TypeString,
+				Optional:    true,
+				Description: "The optional platform for this project",
 				Computed:    true,
 			},
 			"project_id": {
@@ -119,6 +125,7 @@ func resourceSentryProjectRead(d *schema.ResourceData, meta interface{}) error {
 	d.Set("team", proj.Team.Slug)
 	d.Set("name", proj.Name)
 	d.Set("slug", proj.Slug)
+	d.Set("platform", proj.Platform)
 	d.Set("project_id", proj.ID)
 	d.Set("is_public", proj.IsPublic)
 	d.Set("color", proj.Color)
@@ -140,6 +147,11 @@ func resourceSentryProjectUpdate(d *schema.ResourceData, meta interface{}) error
 	params := &sentry.UpdateProjectParams{
 		Name: d.Get("name").(string),
 		Slug: d.Get("slug").(string),
+	}
+
+	platform := d.Get("platform").(string)
+	if platform != "" {
+		params.Platform = platform
 	}
 
 	if v, ok := d.GetOk("digests_min_delay"); ok {
