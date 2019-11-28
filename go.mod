@@ -31,4 +31,7 @@ require (
 )
 
 replace github.com/jianyuan/go-sentry => github.com/mercari/go-sentry v1.2.1-0.20190408100347-637a81a6ad97
+
 replace git.apache.org/thrift.git => github.com/apache/thrift v0.0.0-20180902110319-2566ecd5d999 // indirect
+
+go 1.13
